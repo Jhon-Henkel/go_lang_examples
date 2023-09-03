@@ -29,18 +29,18 @@ func main() {
 	}
 	db.AutoMigrate(&Product{}, &Category{})
 
-	// category := Category{Name: "Categoria 1"}
-	// db.Create(&category)
+	category := Category{Name: "Categoria 1"}
+	db.Create(&category)
 
-	// category2 := Category{Name: "Categoria 2"}
-	// db.Create(&category2)
+	category2 := Category{Name: "Categoria 2"}
+	db.Create(&category2)
 
-	// product := Product{
-	// 	Name:       "Produto 1",
-	// 	Price:      10.0,
-	// 	Categories: []Category{category, category2},
-	// }
-	// db.Create(&product)
+	product := Product{
+		Name:       "Produto 1",
+		Price:      10.0,
+		Categories: []Category{category, category2},
+	}
+	db.Create(&product)
 
 	var categories []Category
 	err = db.Model(&Category{}).Preload("Products").Find(&categories).Error
