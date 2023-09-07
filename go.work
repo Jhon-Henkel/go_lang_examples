@@ -7,4 +7,5 @@ use (
 	./05-packaging/03-trabalhando-com-go-mod-replace/sistema
 	./05-packaging/04-usando-workspace/math
 	./05-packaging/04-usando-workspace/sistema
+	./06-testing/01-iniciando-com-testes-automatizados
 )
