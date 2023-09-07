@@ -10,4 +10,6 @@ use (
 	./06-testing/01-iniciando-com-testes-automatizados
 	./06-testing/02-testando-em-batch
 	./06-testing/03-benchmarking
+	./06-testing/04-fuzzing
+	./06-testing/05-testify
 )
