@@ -3,4 +3,8 @@ go 1.21.0
 use (
 	.
 	./05-packaging/01-introduzindo-o-go-mod
+	./05-packaging/02-entendendo-o-go-mod
+	./05-packaging/03-trabalhando-com-go-mod-replace/sistema
+	./05-packaging/04-usando-workspace/math
+	./05-packaging/04-usando-workspace/sistema
 )

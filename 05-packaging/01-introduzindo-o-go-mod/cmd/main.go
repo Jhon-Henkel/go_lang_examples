@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	math := math.Math{A: 10, B: 20}
+	math := math.NewMath(10, 20)
 	fmt.Println(math.Sum())
 }
