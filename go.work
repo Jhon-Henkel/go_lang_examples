@@ -8,4 +8,5 @@ use (
 	./05-packaging/04-usando-workspace/math
 	./05-packaging/04-usando-workspace/sistema
 	./06-testing/01-iniciando-com-testes-automatizados
+	./06-testing/02-testando-em-batch
 )
