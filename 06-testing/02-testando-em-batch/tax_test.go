@@ -4,6 +4,12 @@ import "testing"
 
 // para rodar o teste, basta usar o comando go test . dentro da pasta em que e encontra o teste
 // o comando go test -v . vai mostrar o resultado de cada teste
+
+// para rodar o coverage:
+// go test -coverprofile=coverage.out
+// para visualizar o coverage:
+// go tool cover -html=coverage.out
+
 func TestCalculateTax(t *testing.T) {
 	amount := 500.0
 	expectedTax := 6.0
