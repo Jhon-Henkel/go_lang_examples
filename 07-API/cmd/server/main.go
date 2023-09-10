@@ -1,8 +1,35 @@
 package main
 
-import "github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API/configs"
+import (
+	"net/http"
+
+	"github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API/configs"
+	"github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API/internal/entity"
+	"github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API/internal/infra/database"
+	"github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API/internal/infra/webserver/handlers"
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
+)
 
 func main() {
-	config, _ := configs.LoadConfig(".")
-	println(config.DbDriver)
+	_, err := configs.LoadConfig(".")
+	if err != nil {
+		panic(err)
+	}
+	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	if err != nil {
+		panic(err)
+	}
+	db.AutoMigrate(&entity.Product{}, &entity.User{})
+	productDB := database.NewProduct(db)
+	productHandler := handlers.NewProductHandler(productDB)
+
+	router := chi.NewRouter()
+	router.Use(middleware.Logger)
+	router.Post("/products", productHandler.CreateProduct)
+	router.Get("/products/{id}", productHandler.GetProduct)
+
+	http.ListenAndServe(":8000", router)
 }

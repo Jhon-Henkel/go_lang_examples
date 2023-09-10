@@ -15,3 +15,5 @@ A pasta configs é onde vai ficar as configurações do seu projeto. Padrões do
 A pasta test armazena os testes da aplicação, stubs, documentações do teste.
 
 A pasta api tem documentações da API, swagger, openapi, etc.
+
+O foco dessa pasta é estudar a estrutura de API com GO, a parte de domain e infraestrutura não será abordada nessa etapa.

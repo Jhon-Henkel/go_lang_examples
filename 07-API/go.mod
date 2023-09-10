@@ -3,6 +3,7 @@ module github.com/Jhon-Henkel/go_lang_examples/tree/main/07-API
 go 1.21.0
 
 require (
+	github.com/go-chi/chi/v5 v5.0.10
 	github.com/go-chi/jwtauth v1.2.0
 	github.com/google/uuid v1.1.2
 	github.com/spf13/viper v1.16.0
