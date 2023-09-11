@@ -34,5 +34,10 @@ func main() {
 	router.Put("/products/{id}", productHandler.UpdateProduct)
 	router.Delete("/products/{id}", productHandler.DeleteProduct)
 
+	userDB := database.NewUser(db)
+	userHandler := handlers.NewUserHandler(userDB)
+	
+	router.Post("/users", userHandler.CreateUser)
+
 	http.ListenAndServe(":8000", router)
 }
