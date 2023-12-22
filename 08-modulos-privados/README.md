@@ -22,3 +22,10 @@ Caso o go não esteja credenciado no github, tem duas formas de se credenciar:
     [url "ssh://git@github.com/"]
         insteadOf = https://github.com/
     ```
+  
+Para assegurar os repositórios das dependências, rode:
+```bash
+go mod vendor
+```
+Isso garante que as dependências não serão alteradas, mesmo que o repositório original seja alterado, como, por exemplo, 
+excluído. Funciona como o composer do PHP.
